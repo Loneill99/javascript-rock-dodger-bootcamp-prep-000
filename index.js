@@ -17,8 +17,10 @@ var gameInterval = null;
  */
 
 function checkCollision(rock) {
-  const top = positionToInteger(rock.style.top);//gives rock's distance from top as an integer (without 'px')
+  const top = positionToInteger(rock.style.top);
+  //gives rock's distance from top as an integer (without 'px')
   //the following 'if' statement says 'if the rock's distance from the top is greater than 360 (i.e. it is now at same level or below where the dodger is)...
+  
   if (top > 360) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left);//gives dodger's left edge distance from left as an integer (without 'px')
     const dodgerRightEdge = dodgerLeftEdge+40;//gives dodger's right edge distance from left as an integer (without 'px')
@@ -129,7 +131,7 @@ function moveDodgerLeft() {
   window.requestAnimationFrame(function() {
     const left = positionToInteger(DODGER.style.left)
     if (left>0) {
-      DODGER.style.left = `${left - 6}px`
+      DODGER.style.left = `${left - 4}px`
     }
   });
 }
@@ -137,8 +139,8 @@ function moveDodgerLeft() {
 function moveDodgerRight() {
    window.requestAnimationFrame(function() {
      const left = positionToInteger(DODGER.style.left)
-     if (left<360) {
-       DODGER.style.left = `${left + 6}px`
+     if (left < 360) {
+       DODGER.style.left = `${left + 4}px`
      }
    });
    }
