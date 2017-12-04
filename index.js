@@ -121,7 +121,6 @@ return moveRock();
   ROCKS.forEach(function(rock){
      rock.remove();}
    
-   
   )}
 
 
