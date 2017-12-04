@@ -102,9 +102,7 @@ function endGame() {
    window.removeEventListener('keydown',moveDodger);
  window.clearInterval(gameInterval);
   ROCKS.forEach(function(rock){
-     rock.remove();
-    alert "YOU LOSE!"
-  }
+     rock.remove();}
    
   )}
 
@@ -133,7 +131,7 @@ function moveDodgerLeft() {
   window.requestAnimationFrame(function() {
     const left = positionToInteger(DODGER.style.left)
     if (left>0) {
-      DODGER.style.left = `${left - 4}px`
+      DODGER.style.left = `${left - 6}px`
     }
   });
 }
@@ -142,7 +140,7 @@ function moveDodgerRight() {
    window.requestAnimationFrame(function() {
      const left = positionToInteger(DODGER.style.left)
      if (left < 360) {
-       DODGER.style.left = `${left + 4}px`
+       DODGER.style.left = `${left + 6}px`
      }
    });
    }
